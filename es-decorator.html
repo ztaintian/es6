@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>es-6装饰器</title>
+</head>
+<script>
+@testable
+class MyTestableClass {
+  // ...
+}
+
+function testable(target) {
+  target.isTestable = true;
+}
+
+MyTestableClass.isTestable // true
+console.log(MyTestableClass.isTestable)
+
+//google chrome 不支持
+</script>
+<body>
+	
+</body>
+</html>
