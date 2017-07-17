@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<script>
+	var sleep = function (time) {
+		return new Promise(function (resolve, reject) {
+			setTimeout(function () {
+				resolve('传递数据');
+			}, time);
+		})
+	};
+	var start = async function () {
+		let data = await sleep(1000);
+		console.log(data)
+	};
+    start();
+</script>
+<body>
+	
+</body>
+</html>
