@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Proxy</title>
+</head>
+<script>
+	let watch = (obj,fn)=>{
+		return new Proxy(obj,{
+			get(target,prop,receiver){
+				return Reflect.get(target,prop,receiver)
+			},
+			set(target,prop,value){
+				const oldValue = Reflect.get(target,prop,value);
+				const result = Reflect.set(target,prop,value);
+				fn(value,oldValue);
+				return result;
+			}
+		})
+	}
+
+	let obj = watch({},(val,oldValue)=>{
+		console.log('old==>',oldValue);
+		console.log('new==>',val);
+	})
+	obj.a = 1;
+	obj.a =2;
+</script>
+<body>
+	
+</body>
+</html>
