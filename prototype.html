@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>prototype</title>
+</head>
+<script>
+	let object = {};
+	function Test(name){
+		this.name = name;
+		this.say = function(){
+			console.log('say')
+		}
+	}
+	let test = new Test();
+	console.log(test.__proto__.__proto__.__proto__)
+</script>
+<body>
+	
+</body>
+</html>
