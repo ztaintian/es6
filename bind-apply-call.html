@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>bind-apply-call</title>
+</head>
+<script>
+	//bind用法
+	// this.age = 18
+	// let module = {
+ //      age: 22,
+ //      getAge() {
+ //      	return this.age
+ //      }
+	// }
+ //  let test = module.getAge
+ //  console.log(test())
+ //  let testNow = module.getAge()
+ //  console.log(testNow)
+ //  let nowBind = module.getAge.bind(module)
+ //  console.log(nowBind())
+
+ //call apply用法
+ function testApply(cb,cba,str,arr){
+ 	try {
+ 		cb.call(null,str)
+ 		cba.apply(null,arr)
+ 	}catch(e){
+ 		console.log(e.toString())
+ 	}
+
+ }
+testApply(function(str){
+	console.log(str)
+},function(arr){
+	console.log(arr)
+},'str',[1,23,4])
+
+
+</script>
+<body>
+	
+</body>
+</html>
