@@ -7,9 +7,10 @@
 <script>
 	let watch = (obj,fn)=>{
 		return new Proxy(obj,{
-			get(target,prop,receiver){
-				return Reflect.get(target,prop,receiver)
-			},
+			// get(target,prop,receiver){
+			// 	console.log(target,prop,receiver);
+			// 	return Reflect.get(target,prop,receiver)
+			// },
 			set(target,prop,value){
 				const oldValue = Reflect.get(target,prop,value);
 				const result = Reflect.set(target,prop,value);
@@ -19,7 +20,7 @@
 		})
 	}
 
-	let obj = watch({},(val,oldValue)=>{
+	let obj = watch({a:0},(val,oldValue)=>{
 		console.log('old==>',oldValue);
 		console.log('new==>',val);
 	})

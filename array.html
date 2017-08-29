@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Array原生方法</title>
+</head>
+<script>
+	var  arr = [1,2,7,9,5,5,5];
+	//map方法
+	// var map = arr.map((value,index)=> console.log(value,index))  
+	// var map = arr.map((value,index)=> value > 7)  
+	// console.log(map)
+	// foreach方法     
+	// var foreach = arr.forEach((value,index)=>console.log(value,index))
+	//fliter方法
+	// var filter = arr.filter((value,index)=> value > 7)
+	// console.log(filter)
+	//reduce方法
+	// var reduce = arr.reduce((prev,next)=> {
+	// 	console.log(prev,next)
+	// 	return prev + "" +next;
+	// })
+	// console.log(reduce)
+	//every方法
+	// var every = arr.every((value)=>value>0)
+	// console.log(every)
+	//some方法
+	var some = arr.some((value)=>value>5)
+	console.log(some)
+
+
+</script>
+<body>
+	
+</body>
+</html>
